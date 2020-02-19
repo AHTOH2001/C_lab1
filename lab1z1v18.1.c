@@ -2,42 +2,53 @@
 #include <math.h>
 #include <limits.h>
 
-int len1(int x) {
+int len1(int x)
+{
     int d = 0;
-    if (x == 0) return 1;
-    while (x > 0) {
+    if (x == 0)
+        return 1;
+    while (x > 0)
+    {
         x /= 10;
         d++;
     }
     return d;
 }
 
-void spaces1(int x) {
+void spaces1(int x)
+{
     int i = 0;
     for (i = 0; i < x; i++)
         printf(" ");
 }
 
-void tire1(int x) {
+void tire1(int x)
+{
     int i = 0;
     for (i = 0; i < x; i++)
         printf("-");
 }
 
-int max1(int x, int y) {
-    if (x > y) return x;
-    else return y;
+int max1(int x, int y)
+{
+    if (x > y)
+        return x;
+    else
+        return y;
 }
 
-int version1() {
+int version1()
+{
     int x, y;
     printf("Vvedite dva natural'nih chisla\n");
     scanf("%d %d", &x, &y);
-    if (x <= 0 || y <= 0) {
+    if (x <= 0 || y <= 0)
+    {
         printf("\nNe vnaturi");
         return 0;
     }
-    if (x > INT_MAX / y || y > INT_MAX / x) {
+    if (x > INT_MAX / y || y > INT_MAX / x)
+    {
         printf("\nPerestaralsya malex");
         return 0;
     }
@@ -55,13 +66,15 @@ int version1() {
     tire1(da + dy - 1);
     printf("\n");
     int i = 0;
-    while (1) {
+    while (1)
+    {
         int v = y % 10, d = len1(v * x);
         spaces1(20 - d - i);
         printf("%d", v * x);
         spaces1(i);
         printf("\n");
-        if (y / 10 == 0) {
+        if (y / 10 == 0)
+        {
             spaces1(20 - da - i);
             tire1(da + i);
             printf("\n");
@@ -79,7 +92,6 @@ int version1() {
     }
     spaces1(20 - da);
     printf("%d\n", ans);
-
 
     return 0;
 }
