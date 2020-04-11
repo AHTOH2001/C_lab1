@@ -39,7 +39,7 @@ int max1(int x, int y)
 
 int version1()
 {
-    int x, y;
+    int x, y, dx, dy, ans, da, i;
     printf("Vvedite dva natural'nih chisla\n");
     scanf("%d %d", &x, &y);
     if (x <= 0 || y <= 0)
@@ -52,7 +52,7 @@ int version1()
         printf("\nPerestaralsya malex");
         return 0;
     }
-    int dx, dy, ans = x * y;
+    ans = x * y;
     dx = len1(x);
     spaces1(20 - dx);
     printf("%d\n", x);
@@ -61,11 +61,11 @@ int version1()
     printf("x\n");
     spaces1(20 - dy);
     printf("%d\n", y);
-    int da = len1(ans);
+    da = len1(ans);
     spaces1(20 - da - dy + 1);
     tire1(da + dy - 1);
     printf("\n");
-    int i = 0;
+    i = 0;
     while (1)
     {
         int v = y % 10, d = len1(v * x);
